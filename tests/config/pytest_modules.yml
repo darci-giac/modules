@@ -1521,6 +1521,10 @@ star/genomegenerate:
   - modules/star/genomegenerate/**
   - tests/modules/star/genomegenerate/**
 
+starfusion:
+  - modules/starfusion/**
+  - tests/modules/starfusion/**
+
 strelka/germline:
   - modules/strelka/germline/**
   - tests/modules/strelka/germline/**

@@ -1,0 +1,62 @@
+name: starfusion
+## TODO nf-core: Add a description of the module and list keywords
+description: write your description here
+keywords:
+  - align
+  - fasta
+  - genome
+  - fusion
+tools:
+  - starfusion:
+      description: STAR-Fusion fusion variant caller. All dependencies required to run FusionInspector and FusionAnnotator are included.
+      homepage: https://github.com/STAR-Fusion
+      documentation: https://github.com/STAR-Fusion/STAR-Fusion/wiki
+      doi: "10.1186/s13059-019-1842-9"
+      licence: ['BSD-3-clause']
+
+## TODO nf-core: Add a description of all of the variables used as input
+input:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  ## TODO nf-core: Delete / customise this example input
+  - reads:
+      type: file
+      description: List of input FastQ files of size 1 and 2 for single-end and paired-end data, respectively.
+  - index:
+      type: directory
+      description: STAR genome index
+      pattern: "star"
+  - reference:
+      type: directory
+      description: STAR-Fusion reference genome
+
+## TODO nf-core: Add a description of all of the variables used as output
+output:
+  - meta:
+      type: map
+      description: |
+        Groovy Map containing sample information
+        e.g. [ id:'test', single_end:false ]
+  - versions:
+      type: file
+      description: File containing software versions
+      pattern: "versions.yml"
+  ## TODO nf-core: Delete / customise this example output
+  - bam:
+      type: file
+      description: Output BAM file containing read alignments
+      pattern: "*.bam"
+  - fusions:
+      type: file
+      description: STAR-Fusion output file
+      pattern: "*.fusion_predictions.tsv"
+  - abridged:
+      type: file
+      description: STAR-Fusion abridge output file
+      pattern: "*abridged.tsv"
+
+authors:
+  - "@darci-giac"
