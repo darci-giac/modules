@@ -15,6 +15,7 @@ process STARFUSION {
     // TODO nf-core: Where applicable please provide/convert compressed files as input/output
     //               e.g. "*.fastq.gz" and NOT "*.fastq", "*.bam" and NOT "*.sam" etc.
     tuple val(meta), path(reads)
+    path gtf
     path index
     path reference
     val star_ignore_sjdbgtf
